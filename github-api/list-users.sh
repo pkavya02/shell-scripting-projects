@@ -1,5 +1,15 @@
 #!/bin/bash
 
+############################
+# About - This script will list the username who have read access in the organization
+# Input - Export username, Export token
+# Execute - ./listusers.sh Repo_Owner Repo_NAme
+# Repo_Owner - organization owner
+# Repo_Name - Repository name
+###########################
+
+helper()
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -35,6 +45,14 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
+
+# Helper function
+function helper{
+   excepted-cmd-args = 2
+   if [ $# -ne $excepted-cmd-args]; then
+      echo " Please provide the correct arguments in command line"
+      echo "asd"
+}     
 
 # Main script
 
