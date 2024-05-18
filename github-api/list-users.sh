@@ -8,8 +8,6 @@
 # Repo_Name - Repository name
 ###########################
 
-helper()
-
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -47,14 +45,17 @@ function list_users_with_read_access {
 }
 
 # Helper function
-function helper{
-   excepted-cmd-args = 2
-   if [ $# -ne $excepted-cmd-args]; then
+function helper {
+   expectedargs=2
+   if [[ $# -ne "$expectedargs" ]]; then
       echo " Please provide the correct arguments in command line"
       echo "asd"
-}     
+   else
+      echo "passed correct arguments"
+   fi
+}
 
 # Main script
-
+helper
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
 list_users_with_read_access
